@@ -12,7 +12,8 @@ function createWindow() {
         height: 900,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
+            contextIsolation: false, // to use require
+            enableRemoteModule: true, // to use remote
             preload: path.join(__dirname, 'preload.js')
         }
     })
@@ -26,7 +27,7 @@ app.whenReady().then(() => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
 
-    app.on('closed', () => {
-        win = null
+    app.on('window-all-closed', () => {
+        app.quit()
     })
 })
