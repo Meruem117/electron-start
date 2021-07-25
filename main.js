@@ -1,15 +1,21 @@
-const { app, BrowserWindow } = require('electron')
+const {
+    app,
+    BrowserWindow
+} = require('electron')
 const path = require('path')
 
+let win = null
+
 function createWindow() {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 1600,
         height: 900,
         webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
             preload: path.join(__dirname, 'preload.js')
         }
     })
-
     win.loadFile('index.html')
 }
 
@@ -18,5 +24,9 @@ app.whenReady().then(() => {
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+
+    app.on('closed', () => {
+        win = null
     })
 })
