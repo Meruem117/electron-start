@@ -1,0 +1,53 @@
+{
+  "name": "electron_time_start",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/Meruem117/electron_time_start.git",
+  "author": "Meruem117",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.58",
+    "dayjs": "^1.10.6",
+    "electron-squirrel-startup": "^1.0.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "@electron-forge/maker-deb": "^6.0.0-beta.58",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.58",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.58",
+    "@electron-forge/maker-zip": "^6.0.0-beta.58",
+    "electron": "^13.1.7"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [{
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_time_start"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
