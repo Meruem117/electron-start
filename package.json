@@ -1,7 +1,8 @@
 {
   "name": "electron_time_start",
+  "description": "An electron project start",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "./src/main.js",
   "repository": "https://github.com/Meruem117/electron_time_start.git",
   "author": "Meruem117",
   "license": "MIT",
