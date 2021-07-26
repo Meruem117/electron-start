@@ -32,10 +32,7 @@ function openNewWindow() {
     }
 }
 
-window.onload = () => {
-    openNewWindow()
+module.exports = {
+    fileRead,
+    openNewWindow
 }
-
-window.addEventListener('contextmenu', () => {
-    alert(111)
-})

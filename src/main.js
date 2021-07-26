@@ -20,7 +20,7 @@ function createWindow() {
 
 app.whenReady().then(() => {
     createWindow()
-    // require('./src/render/menu')
+    // require('./render/menu')
 
     app.on('window-all-closed', () => {
         app.quit()
