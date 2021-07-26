@@ -1,7 +1,6 @@
 const fs = require('fs')
 const {
-    remote,
-    Menu
+    remote
 } = require('electron')
 const {
     BrowserWindow
@@ -11,7 +10,7 @@ const {
 function fileRead() {
     const btn = this.document.querySelector('#btn')
     const content = this.document.querySelector('#content')
-    btn.onclick = function () {
+    btn.onclick = () => {
         fs.readFile('demo.txt', (err, data) => {
             content.innerHTML = data
         })
@@ -21,33 +20,22 @@ function fileRead() {
 // 打开新窗口
 function openNewWindow() {
     const btn = this.document.querySelector('#btn')
-    let newWin = null
     btn.onclick = () => {
-        newWin = new BrowserWindow({
+        let newWin = new BrowserWindow({
             width: 800,
             height: 600
         })
-        newWin.loadFile('src/html/new.html')
+        newWin.loadFile('src/page/new.html')
         newWin.on('closed', () => {
             newWin = null
         })
     }
 }
 
-// 菜单
-const menuTemplate = [{
-        label: 'home'
-    },
-    {
-        label: 'about',
-        submenu: [{
-            label: 'detail'
-        }]
-    }
-]
-const menu = Menu.buildFromTemplate(menuTemplate)
-Menu.setApplicationMenu(menu)
-
-window.onload = function () {
+window.onload = () => {
     openNewWindow()
 }
+
+window.addEventListener('contextmenu', () => {
+    alert(111)
+})

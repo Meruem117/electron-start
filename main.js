@@ -4,10 +4,8 @@ const {
 } = require('electron')
 const path = require('path')
 
-let win = null
-
 function createWindow() {
-    win = new BrowserWindow({
+    const win = new BrowserWindow({
         width: 1600,
         height: 900,
         webPreferences: {
@@ -22,10 +20,7 @@ function createWindow() {
 
 app.whenReady().then(() => {
     createWindow()
-
-    app.on('activate', function () {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
+    // require('./src/render/menu')
 
     app.on('window-all-closed', () => {
         app.quit()
