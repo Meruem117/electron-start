@@ -10,7 +10,8 @@
     "dev": "electron ./src/main.js",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "serve": "live-server ./src"
   },
   "dependencies": {
     "@electron-forge/cli": "^6.0.0-beta.58",

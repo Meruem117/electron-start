@@ -2,6 +2,7 @@ const {
     Menu,
     BrowserWindow
 } = require('electron')
+const path = require('path')
 
 // 菜单
 function setMenu() {
@@ -26,7 +27,7 @@ function setMenu() {
                             enableRemoteModule: true,
                         }
                     })
-                    win.loadFile('../src/pages/new.html')
+                    win.loadFile(path.join(__dirname, '../pages/new.html'))
                 }
             }]
         }

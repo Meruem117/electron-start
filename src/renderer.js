@@ -2,7 +2,7 @@
 
 // 监听在线/离线事件
 function updateOnlineStatus() {
-    document.getElementById('status').innerHTML = navigator.onLine ? 'online' : 'offline'
+    document.getElementById('status').innerHTML = navigator.onLine ? 'Online' : 'Offline'
 }
 window.addEventListener('online', updateOnlineStatus)
 window.addEventListener('offline', updateOnlineStatus)

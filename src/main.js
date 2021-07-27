@@ -18,7 +18,7 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         }
     })
-    win.loadFile('index.html')
+    win.loadFile(path.join(__dirname, 'index.html'))
 
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
