@@ -6,17 +6,18 @@ const path = require('path')
 
 // 菜单
 function setMenu() {
+    const currentWin = BrowserWindow.getFocusedWindow()
     const menuTemplate = Menu.buildFromTemplate([{
-            label: 'home',
+            label: 'Home',
             click() {
                 console.log('Home')
             }
         },
         {
-            label: 'about',
+            label: 'About',
             submenu: [{
-                label: 'detail',
-                accelerator: process.platform === 'darwin' ? "Cmd+N" : "Ctrl+N", // 快捷键
+                label: 'Detail',
+                accelerator: process.platform === 'darwin' ? "Cmd+W" : "Ctrl+W", // 快捷键
                 click() { // 点击事件
                     const win = new BrowserWindow({
                         width: 1600,

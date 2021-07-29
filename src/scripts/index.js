@@ -1,8 +1,7 @@
-// const {} = require('electron')
-// const fs = require('fs')
 const menu = require('./menu')
 const task = require('./task')
 const notification = require('./notification')
+const file = require('./file')
 
 // 读取文件
 // function fileReader() {
@@ -19,5 +18,5 @@ module.exports = {
     menu,
     task,
     notification,
-    // fileReader
+    file
 }
