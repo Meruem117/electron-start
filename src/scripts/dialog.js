@@ -23,7 +23,7 @@ function showMessageBox(options) {
 function showSaveDialog(options) {
     dialog.showSaveDialog({
         title: options.title ? options.title : "保存",
-        defaultPath: options.defaultPath ? optionsdefaultPath : "*.txt",
+        defaultPath: options.defaultPath ? options.defaultPath : "*.txt",
         filters: options.filters ? options.filters : [{
                 name: '文档文件',
                 extensions: ['*.txt']

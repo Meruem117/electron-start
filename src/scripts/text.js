@@ -8,6 +8,7 @@ const fs = require('fs');
 let textarea = document.querySelector("#text");
 
 ipcRenderer.on("action", (err, data) => {
+    console.log(data)
     switch (data) {
         case "new":
             newFile();
