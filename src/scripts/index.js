@@ -1,6 +1,3 @@
-const menu = require('./menu')
-const task = require('./task')
-const notification = require('./notification')
 const file = require('./file')
 
 // 读取文件
@@ -15,8 +12,5 @@ const file = require('./file')
 // }
 
 module.exports = {
-    menu,
-    task,
-    notification,
     file
 }

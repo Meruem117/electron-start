@@ -1,9 +1,10 @@
 const {
     Notification
 } = require('electron')
-
-const NOTIFICATION_TITLE = 'Basic Notification'
-const NOTIFICATION_BODY = 'Notification from the Main process'
+const {
+    NOTIFICATION_TITLE,
+    NOTIFICATION_BODY
+} = require('../constant')
 
 // 通知
 function showNotification() {

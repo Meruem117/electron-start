@@ -1,27 +1,34 @@
 const {
     app,
     BrowserWindow,
+    Menu,
     ipcMain,
     nativeTheme
 } = require('electron')
 const path = require('path')
-const scripts = require('./scripts')
+const components = require('./components')
+const utils = require('./scripts')
 
 function createWindow() {
-    const win = new BrowserWindow({
+    let win = new BrowserWindow({
         width: 1600,
         height: 900,
         webPreferences: {
             nodeIntegration: true,
+            devTools: true,
             // contextIsolation: false,
-            enableRemoteModule: true,
+            // enableRemoteModule: true,
             preload: path.join(__dirname, 'preload.js')
         }
     })
+    win.setTitle('Electron')
     win.loadFile(path.join(__dirname, 'index.html'))
-    // win.on('closed', () => {
-    //     win = null
-    // })
+    win.webContents.openDevTools()
+    Menu.setApplicationMenu(components.menu.menuItem(win))
+
+    win.on('closed', () => {
+        win = null
+    })
 }
 
 function handleTheme() {
@@ -40,6 +47,10 @@ function handleTheme() {
     })
 }
 
+function testFile() {
+    utils.file.fsWriteFile()
+}
+
 app.whenReady()
     .then(() => {
         createWindow()
@@ -48,9 +59,6 @@ app.whenReady()
             if (BrowserWindow.getAllWindows().length === 0) createWindow()
         })
         handleTheme()
-    })
-    .then(() => {
-        scripts.menu.setMenu()
     })
 
 app.on('window-all-closed', () => {

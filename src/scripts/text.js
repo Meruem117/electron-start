@@ -5,7 +5,7 @@ const BrowserWindow = electron.remote.BrowserWindow;
 const app = electron.remote.app;
 const fs = require('fs');
 
-let textarea = document.querySelector("#text");
+let textarea = document.querySelector("#content");
 
 ipcRenderer.on("action", (err, data) => {
     console.log(data)

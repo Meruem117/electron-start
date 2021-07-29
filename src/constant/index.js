@@ -1,0 +1,8 @@
+exports.ACTION = 'action'
+exports.NEW_FILE = 'new'
+exports.OPEN_FILE = 'open'
+exports.SAVE_FILE = 'save'
+exports.SAVE_AS_ANOTHER_FILE = 'save_as_another_file'
+exports.EXIT = 'exit'
+exports.NOTIFICATION_TITLE = 'Basic Notification'
+exports.NOTIFICATION_BODY = 'Notification from the Main process'

@@ -116,20 +116,6 @@ function saveOtherFile() { //4.另存为
     dialogShowSaveDialog(options)
 }
 
-function printFile() { //5. 打印
-    BrowserWindow.getFocusedWindow().webContents.print();
-}
-
-function quitFile() { //6.退出
-    app.quit()
-}
-
-function deleteFile() { //7.删除
-    textarea.value = "";
-    document.title = title;
-    isSave = true;
-}
-
 module.exports = {
     fsWriteFile
 }
