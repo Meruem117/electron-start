@@ -1,3 +1,7 @@
+const {
+    ipcRenderer
+} = require('electron')
+
 // 监听在线/离线事件
 function updateOnlineStatus() {
     document.getElementById('status').innerHTML = navigator.onLine ? 'Online' : 'Offline'
@@ -24,4 +28,35 @@ document.getElementById('reset-to-system').addEventListener('click', async () =>
     document.getElementById('theme-source').innerHTML = 'System'
 })
 
-require('./scripts/text')
+// 监听action
+ipcRenderer.on('action', (err, data) => {
+    console.log(data)
+    console.log(err)
+    // switch (data) {
+    //     case 'new':
+    //         console.log('new')
+    //         // newFile()
+    //         break
+    //         // case "open":
+    //         //     openFile();
+    //         //     break;
+    //         // case "save":
+    //         //     saveFile();
+    //         //     break;
+    //         // case "saveOther":
+    //         //     saveOtherFile();
+    //         //     break;
+    //         // case "print":
+    //         //     printFile();
+    //         //     break;
+    //         // case "quit":
+    //         //     quitFile();
+    //         //     break;
+    //         // case "delete":
+    //         //     deleteFile()
+    //         //     break;
+    //     default:
+    //         console.log('default')
+    //         break
+    // }
+})
