@@ -1,30 +1,28 @@
 const {
-    remote
-} = require("electron")
-const {
     dialog
-} = remote
+} = require("electron")
 
-function showMessageBox(options) {
+function showMessageBox() {
     dialog.showMessageBox({
-        title: options.title ? options.title : "electron",
-        type: options.type ? options.type : "info",
-        message: options.message ? options.message : "确定保存?",
-        buttons: options.buttons ? options.buttons : ['Yes', 'No']
-    }).then(res => {
-        if (res.response === 0) {
-            options.sureCallback ? options.sureCallback() : false;
-        } else {
-            options.cancelCallback ? options.cancelCallback() : false;
-        }
+        title: "electron",
+        type: "info",
+        message: "确定保存?",
+        buttons: ['Yes', 'No']
     })
+    // .then(res => {
+    //     if (res.response === 0) {
+    //         options.sureCallback ? options.sureCallback() : false;
+    //     } else {
+    //         options.cancelCallback ? options.cancelCallback() : false;
+    //     }
+    // })
 }
 
-function showSaveDialog(options) {
+function showSaveDialog() {
     dialog.showSaveDialog({
-        title: options.title ? options.title : "保存",
-        defaultPath: options.defaultPath ? options.defaultPath : "*.txt",
-        filters: options.filters ? options.filters : [{
+        title: "保存",
+        defaultPath: "*.txt",
+        filters: [{
                 name: '文档文件',
                 extensions: ['*.txt']
             },
@@ -33,9 +31,10 @@ function showSaveDialog(options) {
                 extensions: ['*']
             }
         ]
-    }).then(res => {
-        options.successCallback ? options.successCallback(res) : false;
     })
+    // .then(res => {
+    //     options.successCallback ? options.successCallback(res) : false;
+    // })
 }
 
 module.exports = {

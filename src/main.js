@@ -3,11 +3,12 @@ const {
     BrowserWindow,
     Menu,
     ipcMain,
-    nativeTheme
+    nativeTheme,
+    dialog
 } = require('electron')
 const path = require('path')
 const components = require('./components')
-const utils = require('./scripts')
+const utils = require('./utils')
 
 function createWindow() {
     let win = new BrowserWindow({
@@ -45,10 +46,6 @@ function handleTheme() {
     ipcMain.handle('dark-mode:system', () => {
         nativeTheme.themeSource = 'system'
     })
-}
-
-function testFile() {
-    utils.file.fsWriteFile()
 }
 
 app.whenReady()
