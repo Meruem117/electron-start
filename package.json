@@ -15,9 +15,7 @@
   },
   "dependencies": {
     "@electron-forge/cli": "^6.0.0-beta.58",
-    "dayjs": "^1.10.6",
-    "electron-squirrel-startup": "^1.0.0",
-    "moment": "^2.29.1"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/maker-deb": "^6.0.0-beta.58",
@@ -29,7 +27,8 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [{
+      "makers": [
+        {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "electron_time_start"
