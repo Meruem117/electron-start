@@ -34,6 +34,7 @@ ipcRenderer.on(ACTION, (event, message) => {
         case NEW_FILE:
             break
         case OPEN_FILE:
+            openFile()
             break
         case SAVE_FILE:
             break
@@ -45,3 +46,10 @@ ipcRenderer.on(ACTION, (event, message) => {
             break
     }
 })
+
+//! dialog is always undefined !!!
+function openFile() {
+    console.log(dialog.showOpenDialog({
+        properties: ['openFile', 'multiSelections']
+    }))
+}

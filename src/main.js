@@ -8,7 +8,7 @@ const {
 } = require('electron')
 const path = require('path')
 const components = require('./components')
-const utils = require('./utils')
+// const utils = require('./utils')
 
 function createWindow() {
     let win = new BrowserWindow({
