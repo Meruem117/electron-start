@@ -36,7 +36,7 @@ function menuItem(currentWin) {
                             enableRemoteModule: true,
                         }
                     })
-                    win.loadFile(path.join(__dirname, '../pages/new.html'))
+                    win.loadFile(path.join(__dirname, '../pages/detail.html'))
                     win.on('closed', () => {
                         win = null
                     })

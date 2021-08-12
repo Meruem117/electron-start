@@ -1,0 +1,73 @@
+body,
+html {
+    margin: 0px;
+    height: 100%;
+}
+
+.title {
+    display: inline;
+    margin-left: 10px;
+}
+
+.description {
+    display: inline;
+    margin-left: 10px;
+    font-size: small;
+}
+
+.status {
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: large;
+}
+
+.connection {
+    display: inline;
+}
+
+.theme {
+    display: inline;
+    margin-left: 30px;
+}
+
+button {
+    font-size: inherit;
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: inset -6px 6px 8px rgba(255, 255, 255, .5), inset 6px -6px 8px rgba(0, 0, 0, .1);
+    margin-left: 15px;
+}
+
+button:active {
+    box-shadow: inset -6px 6px 8px rgba(0, 0, 0, .1), inset 6px -6px 8px rgba(255, 255, 255, .5);
+}
+
+.textbook {
+    padding: 20px;
+    height: 60%;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size: 20px;
+    overflow: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: #ddd;
+        color: black;
+    }
+}
