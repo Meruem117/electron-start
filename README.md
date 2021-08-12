@@ -1,2 +1,2 @@
 # electron_start
-study electron
+I hate electron
