@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import Tetris from './tetris'
+import Tetris from './Tetris'
 
 export default class Index extends Component {
     render() {

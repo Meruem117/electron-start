@@ -26,7 +26,7 @@
  * ```
  */
 
-import './app'
+import './App'
 import './reset.css'
 
 console.log(
