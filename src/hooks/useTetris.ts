@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { Board, Tetromino, Position, Status } from '../types/index.d'
+import type { Board, Tetromino, Position, Status } from '../types'
 import { createEmptyBoard, randomTetromino, rotateShape } from '../utils'
 import { BOARD_WIDTH, BOARD_HEIGHT, SCORE_RATE } from '../constants'
 
@@ -8,7 +8,7 @@ export const useTetris = () => {
     const [currentTetromino, setCurrentTetromino] = useState<Tetromino | null>(null)
     const [nextTetromino, setNextTetromino] = useState<Tetromino | null>(null)
     const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
-    const [gameStatus, setGameStatus] = useState<Status>('playing')
+    const [gameStatus, setGameStatus] = useState<Status>('over')
     const [score, setScore] = useState<number>(0)
 
     // 初始化游戏
@@ -154,18 +154,24 @@ export const useTetris = () => {
             if (gameStatus === 'over') return
             switch (e.key) {
                 case 'ArrowLeft':
+                    e.preventDefault()
                     moveLeft()
                     break
                 case 'ArrowRight':
+                    e.preventDefault()
                     moveRight()
                     break
                 case 'ArrowDown':
+                    e.preventDefault()
                     moveDown()
                     break
                 case 'ArrowUp':
+                    e.preventDefault()
                     rotate()
                     break
-                case ' ':
+                case 'P':
+                case 'p':
+                    e.preventDefault()
                     pause()
                     break
                 default:
@@ -188,6 +194,6 @@ export const useTetris = () => {
         moveRight,
         moveDown,
         rotate,
-        pause,
+        pause
     }
 }
